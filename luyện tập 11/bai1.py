@@ -1,0 +1,21 @@
+arr = []
+for i in range(5):
+    s = input(f"Nhập chuỗi thứ {i+1}: ")
+    arr.append(s)
+
+print("\nDanh sách ban đầu:")
+print(arr)
+for i in range(1, len(arr)):
+    key = arr[i]
+    j = i - 1
+
+    print(f"\nBước {i}:")
+    print("Key =", key)
+    while j >= 0 and len(arr[j]) < len(key):
+        arr[j + 1] = arr[j]
+        j -= 1
+        print("  Dịch chuyển:", arr)
+    arr[j + 1] = key
+    print("  Chèn key:", arr)
+print("\nDanh sách sau khi sắp xếp (giảm dần theo độ dài):")
+print(arr)
